@@ -1,0 +1,161 @@
+  /* Fundo com gradiente suave azul claro */
+    body {
+      background: linear-gradient(135deg, #525151, #adadad);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .livro-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      /* Animação de leve zoom pulse */
+      animation: pulseZoom 3s ease-in-out infinite;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .livro-img:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes pulseZoom {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255,153,0, 0);
+      }
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 15px rgba(255,153,0, 0.6);
+      }
+    }
+
+    .info-box {
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.12);
+      border-radius: 12px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .info-box:hover {
+      box-shadow: 0 0 30px rgba(255,153,0,0.4);
+    }
+
+    .btn-afiliado {
+      background: #ff9900;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255,153,0, 0.4);
+    }
+
+    .btn-afiliado:hover {
+      background: #cc7a00;
+      box-shadow: 0 6px 12px rgba(204,122,0, 0.6);
+      transform: scale(1.05);
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Estilos do livro folheável */
+    .book-container {
+      perspective: 1500px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .book {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      line-height: 1.6;
+      overflow-y: auto;
+    }
+
+    .page.front {
+      background: white;
+      z-index: 2;
+      transform-origin: left;
+      transition: transform 1s ease;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.05);
+      border-radius: 10px 0 0 10px;
+    }
+
+    .page.back {
+      background: #fefefe;
+      color: #333;
+      z-index: 1;
+      transform-origin: right;
+      transform: rotateY(-180deg);
+      border-radius: 0 10px 10px 0;
+      transition: transform 1s ease;
+      overflow-y: auto;
+    }
+
+    .flipped {
+      transform: rotateY(-180deg);
+      box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+      z-index: 3 !important;
+    }
+
+    .controls {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .modal-body {
+      overflow: visible !important; /* permite o overflow do livro */
+    }
+
+    button {
+      margin: 0 15px;
+      padding: 10px 25px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff9900;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255,153,0, 0.4);
+    }
+
+    button:hover:enabled {
+      background-color: #e68a00;
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(230,138,0, 0.6);
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #1976d2, #000000);
+      color: white;
+      padding: 15px 0;
+      margin-top: auto;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
+    }

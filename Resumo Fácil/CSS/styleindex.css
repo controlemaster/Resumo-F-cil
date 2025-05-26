@@ -1,0 +1,207 @@
+body {
+  background: linear-gradient(135deg, #000000, #5a5a5a);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  color: #eee;
+}
+
+.hero {
+  background: linear-gradient(135deg, #343a40, #212529);
+  color: white;
+  height: 100vh; /* altura total da viewport */
+  padding: 0; /* zera o padding pra não aumentar a altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center; /* centraliza horizontalmente */
+  text-align: center;
+  position: relative;
+  margin-bottom: 0; /* remove espaço inferior */
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  opacity: 0.1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  animation: bounceInDown 2s;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  animation: fadeInUp 2s;
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: zoomIn 1s;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02); /* antes era -10px e 1.03 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  padding: 20px;
+  
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.card-text {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+
+
+.btn-primary {
+  background-color: #ff914d;
+  border: none;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #ff751a;
+}
+
+.categoria {
+  margin-top: 80px;
+}
+
+footer {
+  background: #212529;
+}
+
+/* Estilizando o modal de doação */
+#modalDoacao .modal-content {
+  background: rgba(255, 145, 77, 0.15);
+  border: 2px solid #ff914d;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(255, 145, 77, 0.4);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+#modalDoacao .modal-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(255, 117, 26, 0.6);
+}
+
+#modalDoacao .modal-header {
+  border-bottom: none;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ff751a;
+}
+
+#modalDoacao .modal-body {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ffe6cc;
+}
+
+#modalDoacao .modal-body p {
+  margin-bottom: 20px;
+}
+
+#modalDoacao .modal-body img {
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(255, 145, 77, 0.5);
+  max-width: 220px;
+  margin-bottom: 20px;
+}
+
+#modalDoacao .modal-footer {
+  border-top: none;
+  justify-content: center;
+}
+
+#modalDoacao .btn-secondary {
+  background: linear-gradient(45deg, #ff914d, #ff751a);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(255, 117, 26, 0.6);
+  transition: all 0.3s ease;
+}
+
+#modalDoacao .btn-secondary:hover {
+  background: linear-gradient(45deg, #ff751a, #ff914d);
+  box-shadow: 0 12px 30px rgba(255, 145, 77, 0.8);
+  transform: scale(1.05);
+}
+
+/* Botão "Ver Tudo" estilizado */
+.btn-ver-tudo {
+  background: linear-gradient(45deg, #ff914d, #ff751a);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(255, 117, 26, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+}
+
+.btn-ver-tudo:hover {
+  background: linear-gradient(45deg, #ff751a, #ff914d);
+  box-shadow: 0 12px 30px rgba(255, 145, 77, 0.8);
+  transform: scale(1.05);
+}
+
+/* Animações */
+@keyframes bounceInDown {
+  0% { opacity: 0; transform: translateY(-1000px); }
+  60% { opacity: 1; transform: translateY(30px); }
+  80% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
